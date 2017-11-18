@@ -24,18 +24,14 @@ public class BST <T extends Comparable<T> > implements Dict<T> {
 
     private Node<T> add(T t, Node<T> node,Node<T> parent) {
         if(node == null){
-            if(parent!=null)System.out.println(t + " " + parent.data);
             node = new Node<>(t,parent);
             return node;
         }
         else{
-            System.out.println(t + " compare to " + node.data + " = " + t.compareTo(node.data));
             if(t.compareTo(node.data)<0){
-                System.out.println("l");
                 node.left = add(t,node.left,node);
             }
             else {
-                System.out.println("r");
                 node.right = add(t,node.right,node);
             }
         }

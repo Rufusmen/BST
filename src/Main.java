@@ -2,15 +2,12 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String args[]) throws Exception {
-        Integer a = -2;
-        Integer b = 1;
-        System.out.println(a.compareTo(b));
         Scanner in = new Scanner(System.in);
         String s;
         System.out.println("Commands:\ninsert:+\nremove:-\nsearch:?\nmin:<\nmax:>\nsize:s\nclear:c\nexit:e");
         System.out.println("Integer or String? (i/s): ");
         s = in.next();
-        if(s=="i"){
+        if(s.equals("i")){
             int i;
             BST<Integer> bst = new BST<Integer>();
             while (true){
@@ -19,15 +16,15 @@ public class Main {
                     switch (s) {
                         case "+":
                             i = in.nextInt();
-                            bst.insert(new Integer(i));
+                            bst.insert(i);
                             break;
                         case "-":
                             i = in.nextInt();
-                            bst.remove(new Integer(i));
+                            bst.remove(i);
                             break;
                         case "?":
                             i = in.nextInt();
-                            if (bst.search(new Integer(i))) System.out.println(s + " is in BST");
+                            if (bst.search(i)) System.out.println(s + " is in BST");
                             else System.out.println(s + " is not in BST");
                             break;
                         case "<":
