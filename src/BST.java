@@ -46,7 +46,7 @@ public class BST <T extends Comparable<T> > implements Dict<T> {
     }
 
     private Node<T> delete(T t,Node<T> node){
-        if(node == null)return node;
+        if(node == null)return null;
         if(t.compareTo(node.data)<0)node.left = delete(t,node.left);
         else if(t.compareTo(node.data)>0)node.right = delete(t,node.right);
         else{
@@ -101,5 +101,20 @@ public class BST <T extends Comparable<T> > implements Dict<T> {
     public void clear(){
         root = null;
         cnt = 0;
+    }
+
+    @Override
+    public String toString() {
+        String s=_toString(root);
+        return "{" + s.substring(0,s.length()-1) + "}";
+    }
+
+    private String _toString(Node<T> node) {
+        if(node == null) return "";
+        String s = "";
+        if(node.left!=null)s += _toString(node.left);
+        s += node.data.toString() + ',';
+        if(node.right!=null)s+= _toString(node.right);
+        return s;
     }
 }

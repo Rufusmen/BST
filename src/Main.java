@@ -4,7 +4,7 @@ public class Main {
     public static void main(String args[]) throws Exception {
         Scanner in = new Scanner(System.in);
         String s;
-        System.out.println("Commands:\ninsert:+\nremove:-\nsearch:?\nmin:<\nmax:>\nsize:s\nclear:c\nexit:e");
+        System.out.println("Commands:\ninsert:+\nremove:-\nsearch:?\nmin:<\nmax:>\nsize:s\nclear:c\ntoString:w\nexit:e");
         System.out.println("Integer or String? (i/s): ");
         s = in.next();
         if(s.equals("i")){
@@ -38,6 +38,9 @@ public class Main {
                             break;
                         case "c":
                             bst.clear();
+                            break;
+                        case "w":
+                            System.out.println(bst.toString());
                             break;
                         case "e":
                             return;
@@ -77,6 +80,9 @@ public class Main {
                             break;
                         case "c":
                             bst.clear();
+                            break;
+                        case "w":
+                            System.out.println(bst.toString());
                             break;
                         case "e":
                             return;
