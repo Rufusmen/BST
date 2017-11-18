@@ -80,7 +80,7 @@ public class BST <T extends Comparable<T> > implements Dict<T> {
     private T _max(Node<T> node){
         if(node==null)return null;
         if(node.right==null)return node.data;
-        return _min(node.right);
+        return _max(node.right);
     }
 
     @Override
