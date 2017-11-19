@@ -106,7 +106,8 @@ public class BST <T extends Comparable<T> > implements Dict<T> {
     @Override
     public String toString() {
         String s=_toString(root);
-        return "{" + s.substring(0,s.length()-1) + "}";
+        if(s.length()>0)return "{" + s.substring(0,s.length()-1) + "}";
+        else return "NI MA NIC ¯\\_(ツ)_/¯";
     }
 
     private String _toString(Node<T> node) {
